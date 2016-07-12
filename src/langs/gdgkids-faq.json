@@ -1,0 +1,20 @@
+{
+	"es":{
+		"q1": "¿Deben mis chic@s llevar nuestro portatil?",
+		"a1": "Si, el único requisito para los chic@s es que lleven instalado el navegador Google Chrome y el ordenador puede usar redes Wifi.",
+		"q2": "¿Debo quedarme con mis chicos durante el evento?",
+		"a2": "No, GDG Kids es solo para niñ@s, los padres son bienvenidos durante la parte de presentaciones y os animamos a asistir a las presentaciones de proyectos",
+		"q3": "¿Qué hacen mis chic@s durante el evento?",
+		"a3": "Vuestros chic@s conocerán a otros chic@s de sus mismas edades y diferentes, si vienen en grupos (hermanos, amigos) intentamos separarles en grupos diferentes para fomentar las nuevas amistades y las habilidades interpersonales. Tras una charla introductoría los chicos comienzan a programa en lenguaje Scratch (MIT) los proyectos que ellos mismos deciden. Finalmente habrá una entrega de premios. El evento suele durar entre 3 y 5h."
+	},
+
+	"en":{
+		"q1": "Should my kids bring our laptop?",
+		"a1": "Yes, the only requirement is for the kids to have installed Google Chrome and the ability to use a Wifi connection.",
+		"q2": "Should I stay with my kids during the event?",
+		"a2": "No, GDG Kids is a kids only event, although parents are welcome to stay during introductions and encourage to assist project presentations.",
+		"q3": "What would my kids be doing during the event?",
+		"a3": "Your kids will be meeting other kids both their age and different, if they came in a group (brothers, friends) we will try to split them in different groups to create new friendships and boost interpersonal skills. After a short introductory talk the kids start developing in Scratch (MIT) language the projects they themselves decided. Finally there is a prize ceremony. The event ranges from 3 to 5h."
+	}
+
+}

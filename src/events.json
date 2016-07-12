@@ -1,0 +1,26 @@
+{
+	"events": [
+		{
+			"name":"Beeva Kids",
+			"place": "Google Campus Madrid",
+			"lat": 40.4124188,
+			"lon": -3.7182578,
+			"sponsors": "Beeva, GDGSpain",
+			"date": "06/04/2016 09:00",
+			"duration": "5.5h",
+			"image": "https://c6.staticflickr.com/8/7029/27499832445_9ee5318a61_h.jpg",
+			"link": "https://www.beeva.com/beeva-kids-hack-and-learn/"
+		},
+		{
+			"name":"GDGKids Summit",
+			"place": "Etopia, Zaragoza",
+			"lat": 40.4124188,
+			"lon": -3.7182578,
+			"sponsors": "GDGSpain",
+			"date": "09/18/2015 17:30",
+			"duration": "4h",
+			"image": "http://1.bp.blogspot.com/-YkqVpuhTA68/Vf8ZItslDZI/AAAAAAADXFY/N4mnlS_4Z3Q/s1600/IMG_20150918_194806.jpg",
+			"link": "https://events.withgoogle.com/spanish-gdgs-summit-2015/gdg-kids/"
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"es":{
+		"title": "Eventos",
+		"organized_by": "Organizado por",
+		"where": "Dónde?",
+		"when": "Cuándo?"
+	},
+
+	"en":{
+		"title": "Events",
+		"organized_by": "Organized by",
+		"where": "Where?",
+		"when": "When?"
+	}
+
+}

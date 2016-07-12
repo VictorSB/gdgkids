@@ -1,0 +1,136 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/app-localize-behavior/app-localize-behavior.html">
+
+<dom-module id="gdgkids-what-is-it">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        text-align: center;
+        background-image: url("../images/kids_pattern.jpg");
+      }
+
+      h1 {
+        font-size: 22px;
+        margin: 16px 0;
+        color: #212121;
+      }
+
+      paper-card{
+        max-width: 350px;
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-bottom: 24px;
+      }
+
+      .landing_block{
+        margin-top: 15px;
+        display: block;
+        width: 100%;
+        min-height: 100px;
+        color: #FF9800;
+        position: relative;
+        margin-bottom: 15px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .sentence{
+        display: block;
+        max-width: 700px;
+        margin: auto;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        line-height: 1.5;
+        font-size: 24px;
+        color: #3F51B5;
+      }
+
+      .author{
+        font-family: 'Roboto', 'Noto', sans-serif;
+        line-height: 1.5;
+        font-size: 20px;
+        color: black;
+      }
+
+      .sentence_avatar{
+          position: relative;
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          border: 2px solid black;
+      }
+
+      .hero{
+        width: 100%;
+        left: -10px;
+      }
+
+      iframe{
+        display: block;
+        max-width: 90%;
+        margin: auto;
+        border: 5px solid #f29633;
+        border-radius: 20px;
+      }
+    </style>
+
+
+    <img class='hero' src="../images/hero_kids.jpg" />
+    
+    <div class="landing_block">
+      <span class="sentence">{{localize('quote')}} - <span class="author">Víctor Sánchez</span>
+      </span>
+      <img class="sentence_avatar" src="../images/avatar.png" />
+    </div>
+
+    <div class="landing_block">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/pJQrt88Et4o" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <paper-card image="../images/tech.jpg">
+      <div class="card-content">
+        {{localize('tech')}}
+      </div>
+    </paper-card>
+
+    <paper-card image="../images/friends.jpg">
+      <div class="card-content">
+        {{localize('friends')}}
+      </div>
+    </paper-card>
+
+    <paper-card image="../images/social.jpg">
+      <div class="card-content">
+        {{localize('social')}}
+      </div>
+    </paper-card>
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'gdgkids-what-is-it',
+
+      properties: {
+        language: {
+          value: 'es'
+        }
+      },
+
+      behaviors: [
+        Polymer.AppLocalizeBehavior
+      ],
+
+      attached: function() {
+        this.loadResources(this.resolveUrl('langs/gdgkids-what-is-it.json'));
+      }
+
+    });
+
+  </script>
+
+</dom-module>

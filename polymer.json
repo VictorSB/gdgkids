@@ -2,8 +2,9 @@
   "entrypoint": "index.html",
   "shell": "src/my-app.html",
   "fragments": [
-    "src/my-view1.html",
-    "src/my-view2.html",
-    "src/my-view3.html"
+    "src/gdgkids-what-is-it.html",
+    "src/gdgkids-five-commandments.html",
+    "src/gdgkids-events.html",
+    "src/gdgkids-faq.html"
   ]
 }

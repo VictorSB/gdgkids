@@ -1,0 +1,86 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="gdgkids-faq">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+        background-image: url("../images/kids_pattern.jpg");
+      }
+      .card {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        margin: 24px;
+        border-radius: 5px;
+        background-color: #fff;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Roboto', 'Noto', sans-serif;
+      }
+
+      .card_img{
+        max-width: 100%;
+      }
+
+      .question{
+        line-height: 1.5;
+        font-size: 24px;
+        color: #3F51B5;
+      }
+
+      .answer{
+        line-height: 1.5;
+        font-size: 16px;
+      }
+    </style>
+
+    <div class="card">
+      <p class="question">{{localize('q1')}}</p>
+      <p class="answer">{{localize('a1')}}</p>
+    </div>
+
+    <div class="card">
+      <p class="question">{{localize('q2')}}</p>
+      <p class="answer">{{localize('a2')}}</p>
+    </div>
+
+    <div class="card">
+      <p class="question">{{localize('q3')}}</p>
+      <p class="answer">{{localize('a3')}}</p>
+    </div>
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'gdgkids-faq',
+
+      properties: {
+        language: {
+          value: 'es'
+        },
+
+        events:{
+          type: Object,
+          value: []
+        }
+      },
+
+      behaviors: [
+        Polymer.AppLocalizeBehavior
+      ],
+
+      attached: function() {
+        this.loadResources(this.resolveUrl('langs/gdgkids-faq.json'));
+      }
+    });
+
+  </script>
+
+</dom-module>

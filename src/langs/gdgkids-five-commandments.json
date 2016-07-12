@@ -1,0 +1,17 @@
+{
+	"es":{
+		"c1": "GDG Kids es un evento sin ánimo de lucro",
+		"c2": "GDG Kids lucha contra la brecha digital",
+		"c3": "GDG Kids DEBE ser divertido para participantes",
+		"c4": "GDG Kids DEBE ser divertido para organizadores",
+		"c5": "GDG Kids busca promover disciplinas STEAM"		
+	},
+
+	"en":{
+		"c1": "GDG Kids is an event free of charge",
+		"c2": "GDG Kids lucha contra la brecha digital",
+		"c3": "GDG Kids MUST be fun for it's participants",
+		"c4": "GDG Kids MUST be fun for it's organizers",
+		"c5": "GDG Kids aims to promote STEAM disciplines"
+	}
+}

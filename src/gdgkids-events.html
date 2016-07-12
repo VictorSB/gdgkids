@@ -1,0 +1,117 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/google-map/google-map-elements.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+<dom-module id="gdgkids-events">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+        background-image: url("../images/kids_pattern.jpg");
+      }
+      .card {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        margin: 24px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #757575;
+      }
+      .circle {
+        display: inline-block;
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        background: #ddd;
+        line-height: 64px;
+        font-size: 30px;
+        color: #555;
+        text-align: center;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 16px 0;
+        color: #212121;
+      }
+
+      google-map {
+        width: 350px;
+        height: 100px;
+      }
+
+      paper-card {
+        --paper-card-header-image: {
+          max-width: 350px;
+        }
+        margin: 12px;
+        max-width: 350px;
+      }
+    </style>
+
+    <iron-ajax id="loadedEvents"
+        auto
+        url="events.json"
+        handle-as="json"
+        on-response="_handleEvents"></iron-ajax>
+
+
+    </div>
+    <template is="dom-repeat" items={{events}} as="event">
+
+      <paper-card image="{{event.image}}">
+        <div class="card-content">
+          <p>{{event.name}}</p>
+          <p>{{localize('organized_by')}}: {{event.sponsors}}</p>
+          <p>{{localize('where')}}: {{event.place}}</p>
+          <p>{{localize('when')}}: {{event.date}}</p>
+          <p><a target="_blank" href="{{event.link}}">Web</a></p>
+        </div>
+        <google-map api-key="AIzaSyBk6pFtlXKL4vxu3XSMLPnlWG8cElOvsDI" 
+                    fit-to-markers
+                    zoom=15>
+          <google-map-marker latitude="{{event.lat}}" 
+                             longitude="{{event.lon}}" 
+                             title="{{event.name}}">
+          </google-map-marker>
+        </google-map>
+      </paper-card>
+    </template>
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'gdgkids-events',
+
+      properties: {
+        language: {
+          value: 'es'
+        },
+
+        events:{
+          type: Object,
+          value: []
+        }
+      },
+
+      behaviors: [
+        Polymer.AppLocalizeBehavior
+      ],
+
+      attached: function() {
+        this.loadResources(this.resolveUrl('langs/gdgkids-events.json'));
+      },
+
+      _handleEvents: function(event){
+        this.events = this.$.loadedEvents.lastResponse.events;
+      }
+    });
+
+  </script>
+
+</dom-module>

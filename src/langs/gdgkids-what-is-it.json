@@ -1,0 +1,16 @@
+{
+	"es":{
+		"quote": "\"Pretende ser ese primer contacto que apasiona y enamora, la oportunidad de cruzar una puerta a un mundo nuevo donde no existe la magia, pero sí los magos\"",
+		"tech": "Los chicos aprenden a expresarse con la tecnología creando sus propios proyectos con el software Scratch del MIT.",
+		"friends": "GDGKids se convierte en el entorno ideal para hacer nuevos amigos de diferentes edades y entornos sociales.",
+		"social": "Al final del evento el trabajo en equipo da sus frutos y los chicos deben presentar en público sus trabajos."
+	},
+
+	"en":{
+		"quote": "\"Pretends to be that first contact that fascinates and enrapture, the opportunity to cross a door to a new world where magic does not exist, but wizards do\"",
+		"tech": "Technology",
+		"friends": "Friends",
+		"social": "Social abilities"
+	}
+
+}

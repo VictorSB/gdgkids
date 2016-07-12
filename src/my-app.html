@@ -1,12 +1,3 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/app-route/app-location.html">
 <link rel="import" href="../bower_components/app-route/app-route.html">
@@ -19,6 +10,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/app-localize-behavior/app-localize-behavior.html">
+
 <link rel="import" href="my-icons.html">
 
 <dom-module id="my-app">
@@ -29,8 +22,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       :host {
         display: block;
-        --app-primary-color: #4285f4;
+        --app-primary-color: #f29633;
         --app-secondary-color: black;
+      }
+
+      app-drawer {
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
       }
 
       app-header {
@@ -59,6 +56,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding-left: 32px;
       }
 
+      #logo {
+        max-height: 64px;
+      }
 
     </style>
 
@@ -73,11 +73,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <!-- Drawer content -->
       <app-drawer>
-        <app-toolbar>Menu</app-toolbar>
+        <app-toolbar>{{localize('menu')}}</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="/view1">View One</a>
-          <a name="view2" href="/view2">View Two</a>
-          <a name="view3" href="/view3">View Three</a>
+          <a name="what-is-it" href="/what-is-it">{{localize('what-is')}}</a>
+          <a name="five-commandments" href="/five-commandments">{{localize('5-commandments')}}</a>
+          <a name="faq" href="/faq">{{localize('faq')}}</a>
+          <a name="events" href="/events">{{localize('events')}}</a>
         </iron-selector>
       </app-drawer>
 
@@ -87,14 +88,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-            <div title>My App</div>
+            <img id="logo" src='../images/gdgkids.png' />
           </app-toolbar>
         </app-header>
 
         <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
-          <my-view1 name="view1"></my-view1>
-          <my-view2 name="view2"></my-view2>
-          <my-view3 name="view3"></my-view3>
+          <gdgkids-what-is-it language={{lang}} name="what-is-it"></gdgkids-what-is-it>
+          <gdgkids-five-commandments language={{lang}} name="five-commandments"></gdgkids-five-commandments>
+          <gdgkids-faq language={{lang}} name="faq"></gdgkids-faq>
+          <gdgkids-events language={{lang}} name="events"></gdgkids-events>
         </iron-pages>
 
       </app-header-layout>
@@ -110,28 +112,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'my-app',
 
       properties: {
-
         page: {
           type: String,
           reflectToAttribute: true,
           observer: '_pageChanged'
         },
 
+        language: {
+          value: 'es'
+        }
       },
+
+
+      behaviors: [
+          Polymer.AppLocalizeBehavior
+      ],
 
       observers: [
         '_routePageChanged(routeData.page)'
       ],
 
       _routePageChanged: function(page) {
-        this.page = page || 'view1';
+        this.page = page || 'what-is-it';
       },
 
       _pageChanged: function(page) {
         // load page import on demand.
         this.importHref(
-          this.resolveUrl('my-' + page + '.html'), null, null, true);
-      }
+          this.resolveUrl('gdgkids-' + page + '.html'), null, null, true);
+      },
+
+      attached: function() {
+        this.loadResources(this.resolveUrl('langs/my-app.json'));
+      },
 
     });
 

@@ -1,0 +1,18 @@
+{
+	"es":{
+		"menu": "Menu",
+		"what-is": "Qué es GDGKids?",
+		"5-commandments": "Nuestros 5 mandamientos",
+		"events": "Eventos",
+		"faq": "FAQ"
+	},
+
+	"en":{
+		"menu": "Menu",
+		"what-is": "What is GDGKids?",
+		"5-commandments": "Our 5 commandments",
+		"events": "Events",
+		"faq": "FAQ"
+	}
+
+}
