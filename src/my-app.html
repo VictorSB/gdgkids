@@ -11,6 +11,7 @@
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/app-localize-behavior/app-localize-behavior.html">
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,600' rel='stylesheet' type='text/css'>
 
 <link rel="import" href="my-icons.html">
 
@@ -27,37 +28,56 @@
       }
 
       app-drawer {
-        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
       }
 
       app-header {
-        background-color: var(--app-primary-color);
         color: #fff;
       }
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
       }
-
-      .drawer-list {
-        margin: 0 20px;
+      .logo_box{
+        height: 256px;
+        background-color: #FF9200;
+      }
+      .logo_box img {
+        padding-top: 99px;
+        max-width: 256px;
       }
       .drawer-list a {
         display: block;
-        padding: 0 16px;
-        line-height: 40px;
+        height: 70px;
+        margin-bottom: 1px;
+        padding: 0 12px;
+        line-height: 105px;
         text-decoration: none;
-        color: var(--app-secondary-color);
+        font-family: 'Work Sans', sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        color: #FFF;
+
+      }
+      .drawer-list a:first-child{
+        background-color: #F6B155;
+      }
+      .drawer-list a:nth-child(2){
+        background-color: #B3C750;
+      }
+      .drawer-list a:nth-child(3){
+        background-color: #7D7D7D;
+      }
+      .drawer-list a:nth-child(4){
+        background-color: #E74651;
       }
       .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
+        font-weight: 600;
       }
       .drawer-list a.subroute {
         padding-left: 32px;
       }
-
       #logo {
-        max-height: 64px;
+        display: none;
       }
 
     </style>
@@ -73,13 +93,16 @@
 
       <!-- Drawer content -->
       <app-drawer>
-        <app-toolbar>{{localize('menu')}}</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="what-is-it" href="/what-is-it">{{localize('what-is')}}</a>
-          <a name="five-commandments" href="/five-commandments">{{localize('5-commandments')}}</a>
-          <a name="faq" href="/faq">{{localize('faq')}}</a>
-          <a name="events" href="/events">{{localize('events')}}</a>
-        </iron-selector>
+        <!-- <app-toolbar>{{localize('menu')}}</app-toolbar> -->
+        <div class="logo_box">
+          <img src='../images/gdgkids.png' />
+        </div>
+         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <a name="what-is-it" class="first" href="/what-is-it">{{localize('what-is')}}</a>
+          <a name="five-commandments" class="second" href="/five-commandments">{{localize('5-commandments')}}</a>
+          <a name="faq" class="third" href="/faq">{{localize('faq')}}</a>
+          <a name="events" class="fourth" href="/events">{{localize('events')}}</a>
+         </iron-selector>
       </app-drawer>
 
       <!-- Main content -->

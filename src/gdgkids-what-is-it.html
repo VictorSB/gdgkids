@@ -10,7 +10,6 @@
       :host {
         display: block;
         text-align: center;
-        background-image: url("../images/kids_pattern.jpg");
       }
 
       h1 {
@@ -19,75 +18,100 @@
         color: #212121;
       }
 
-      paper-card{
-        max-width: 350px;
-        margin-left: 12px;
-        margin-right: 12px;
-        margin-bottom: 24px;
-      }
-
-      .landing_block{
-        margin-top: 15px;
-        display: block;
+      .landing_top{
         width: 100%;
-        min-height: 100px;
-        color: #FF9800;
-        position: relative;
-        margin-bottom: 15px;
-        text-align: center;
-        margin-bottom: 15px;
+        height: 256px;
       }
 
-      .sentence{
-        display: block;
-        max-width: 700px;
-        margin: auto;
-        font-family: 'Roboto', 'Noto', sans-serif;
-        line-height: 1.5;
-        font-size: 24px;
-        color: #3F51B5;
-      }
-
-      .author{
-        font-family: 'Roboto', 'Noto', sans-serif;
-        line-height: 1.5;
-        font-size: 20px;
-        color: black;
-      }
-
-      .sentence_avatar{
-          position: relative;
-          width: 40px;
-          height: 40px;
-          border-radius: 20px;
-          border: 2px solid black;
-      }
-
-      .hero{
+      .landing_top img{
         width: 100%;
         left: -10px;
       }
 
+      .landing_block{
+        display: block;
+        position: relative;
+        width: 100%;
+        min-height: 223px;
+        text-align: center;
+        background-color: #E74651;
+        padding-top: 60px;
+      }
+
+      .sentence{
+        display: block;
+        max-width: 780px;
+        margin: auto;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 300;
+        line-height: 1.3;
+        text-align: justify;
+        font-size: 22px;
+        color: #FFF;
+      }
+
+      .author{
+        display: block;
+        padding-top: 15px;
+        text-align: right;
+      }
+
+      paper-card{
+        position: relative;
+        max-width: 360px;
+        top: -50px;
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-bottom: 24px;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: #7D7D7D;
+        --paper-card-header-image: {
+          width: 145px;
+          height: 145px;
+          border-radius: 50%;
+          border: solid 4px #F6B155;
+        }
+      }
+
+      .landing_video{
+        height: 285px;
+        margin-top: 60px;
+        background-color: #F6B155;
+      }
+
       iframe{
+        position: relative;
         display: block;
         max-width: 90%;
         margin: auto;
-        border: 5px solid #f29633;
-        border-radius: 20px;
+        top: -50px;
       }
+
+      .footer{
+        position: relative;
+        margin-top: 1px;
+        padding-right: 25px;
+        height: 60px;
+        background-color: #7D7D7D;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: right;
+        line-height: 60px;
+        color: #FFF;
+
+      }
+
     </style>
 
-
-    <img class='hero' src="../images/hero_kids.jpg" />
-    
-    <div class="landing_block">
-      <span class="sentence">{{localize('quote')}} - <span class="author">Víctor Sánchez</span>
-      </span>
-      <img class="sentence_avatar" src="../images/avatar.png" />
+    <div class="landing_top">
+      <img src="../images/hero_kids.jpg" />
     </div>
-
     <div class="landing_block">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/pJQrt88Et4o" frameborder="0" allowfullscreen></iframe>
+      <span class="sentence">{{localize('quote')}} <span class="author">- Víctor Sánchez</span>
+      </span>
     </div>
 
     <paper-card image="../images/tech.jpg">
@@ -107,6 +131,15 @@
         {{localize('social')}}
       </div>
     </paper-card>
+
+    <div class="landing_video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/pJQrt88Et4o" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="footer">
+      <span>GDGKids © 2016</span>
+    </div>
+
   </template>
 
   <script>
